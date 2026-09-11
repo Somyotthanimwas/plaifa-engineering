@@ -7,6 +7,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import CompanyProfile from "./pages/CompanyProfile";
 import Home from "./pages/Home";
+import Projects from "./pages/Projects";
 
 function CompanyProfileNavLink() {
   useEffect(() => {
@@ -24,6 +25,39 @@ function CompanyProfileNavLink() {
     nav.insertBefore(link, nav.children[1] || null);
 
     return () => link.remove();
+  }, []);
+
+  return null;
+}
+
+function ProjectsPageNavLink() {
+  useEffect(() => {
+    if (window.location.pathname !== "/") return;
+
+    const links: HTMLAnchorElement[] = [];
+    const desktopNav = document.querySelector('nav[aria-label="Main navigation"]');
+    if (desktopNav && !desktopNav.querySelector('[data-projects-page-nav]')) {
+      const link = document.createElement("a");
+      link.href = "/projects";
+      link.className = "nav-link text-xl text-green-700 hover:text-green-500";
+      link.textContent = "ผลงานทั้งหมด";
+      link.setAttribute("data-projects-page-nav", "true");
+      desktopNav.appendChild(link);
+      links.push(link);
+    }
+
+    const mobileNav = document.querySelector('nav[aria-label="Mobile navigation"]');
+    if (mobileNav && !mobileNav.querySelector('[data-projects-page-nav]')) {
+      const link = document.createElement("a");
+      link.href = "/projects";
+      link.className = "flex items-center justify-between border-b border-slate-200 pb-3 text-sm font-bold text-[#10202d]";
+      link.textContent = "ผลงานทั้งหมด";
+      link.setAttribute("data-projects-page-nav", "true");
+      mobileNav.appendChild(link);
+      links.push(link);
+    }
+
+    return () => links.forEach((link) => link.remove());
   }, []);
 
   return null;
@@ -78,6 +112,7 @@ function Router() {
     <Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/company-profile"} component={CompanyProfile} />
+      <Route path={"/projects"} component={Projects} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
@@ -92,6 +127,7 @@ function App() {
         <TooltipProvider>
           <Toaster />
           <CompanyProfileNavLink />
+          <ProjectsPageNavLink />
           <ContactFormEmailBridge />
           <Router />
         </TooltipProvider>
