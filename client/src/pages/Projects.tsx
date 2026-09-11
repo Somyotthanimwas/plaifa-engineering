@@ -1,38 +1,12 @@
-import { ArrowLeft, ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Building2, CheckCircle2, Factory, ShieldCheck, Sun, Wrench, Zap } from "lucide-react";
 
 const projects = [
-  {
-    code: "MDB",
-    title: "ติดตั้งตู้ MDB",
-    subtitle: "MAIN DISTRIBUTION BOARD",
-    description:
-      "งานติดตั้งตู้จ่ายไฟหลัก จัดระเบียบระบบจ่ายไฟ และตรวจสอบความเรียบร้อยก่อนส่งมอบ",
-    image: "/assets/plaifa-mdb.jpg",
-  },
-  {
-    code: "TRF",
-    title: "ติดตั้งหม้อแปลงไฟฟ้า",
-    subtitle: "TRANSFORMER INSTALLATION",
-    description:
-      "งานติดตั้งหม้อแปลง การเชื่อมต่อระบบ และงานประกอบที่เกี่ยวข้อง โดยคำนึงถึงความปลอดภัยหน้างาน",
-    image: "/assets/plaifa-transformer.jpg",
-  },
-  {
-    code: "CT / WW",
-    title: "Cable Tray & Wireway",
-    subtitle: "CABLE ROUTING SYSTEM",
-    description:
-      "จัดแนวเส้นทางสายไฟให้เป็นระบบ ลดความซับซ้อน และรองรับการตรวจสอบบำรุงรักษาในอนาคต",
-    image: "/assets/plaifa-cabletray.jpg",
-  },
-  {
-    code: "TECH",
-    title: "ตรวจสอบและแก้ไขระบบไฟฟ้า",
-    subtitle: "TECHNICAL SERVICE",
-    description:
-      "ตรวจสอบหน้างาน วิเคราะห์ปัญหา งานเข้าหัวสาย ต่อเข้าตู้ไฟ และปรับปรุงรายละเอียดของระบบ",
-    image: "/assets/plaifa-technician.jpg",
-  },
+  { code: "HV / TRF", title: "ระบบไฟฟ้าแรงสูงและหม้อแปลงไฟฟ้า", description: "ติดตั้งระบบไฟฟ้าแรงสูง หม้อแปลง และอุปกรณ์ที่เกี่ยวข้อง พร้อมงานเชื่อมต่อและตรวจสอบระบบ", image: "/assets/plaifa-transformer.jpg", icon: Zap },
+  { code: "MDB / MCC", title: "ตู้เมนสวิตช์บอร์ดและระบบควบคุม", description: "ติดตั้งและจัดระบบ MDB, DB, MCC รวมถึงงานเดินสายและจัดระเบียบระบบจ่ายไฟ", image: "/assets/plaifa-mdb.jpg", icon: Building2 },
+  { code: "CABLE", title: "Cable Tray & Wireway", description: "ออกแบบและติดตั้งแนวทางเดินสายไฟให้เป็นระเบียบ รองรับการตรวจสอบและบำรุงรักษา", image: "/assets/plaifa-cabletray.jpg", icon: Wrench },
+  { code: "SERVICE", title: "ตรวจสอบและบำรุงรักษาระบบไฟฟ้า", description: "ตรวจสอบระบบ วิเคราะห์ปัญหา และแก้ไขงานโดยคำนึงถึงความปลอดภัยและความพร้อมใช้งาน", image: "/assets/plaifa-technician.jpg", icon: ShieldCheck },
+  { code: "FACTORY", title: "งานติดตั้งระบบไฟฟ้าโรงงาน / อาคาร", description: "งานระบบไฟฟ้าสำหรับโครงการใหม่และงานปรับปรุงระบบเดิม ตั้งแต่หน้างานจนถึงส่งมอบ", image: "/assets/plaifa-hero.jpg", icon: Factory },
+  { code: "SOLAR", title: "ระบบผลิตไฟฟ้าจากพลังงานแสงอาทิตย์", description: "ออกแบบ ติดตั้ง และเชื่อมต่อระบบโซลาร์รูฟท็อปเพื่อช่วยเพิ่มประสิทธิภาพการใช้พลังงาน", image: "/assets/plaifa-hero.jpg", icon: Sun },
 ];
 
 export default function Projects() {
@@ -40,114 +14,54 @@ export default function Projects() {
     <div className="min-h-screen bg-[#f3f5f6] text-[#10202d]">
       <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-[#f3f5f6]/95 backdrop-blur-xl">
         <div className="container flex h-[76px] items-center justify-between">
-          <a href="/" className="flex items-center" aria-label="กลับหน้าหลัก">
-            <img
-              src="/assets/paifa-engineering-logo.png"
-              alt="Plaifa Engineering"
-              className="h-12 w-auto object-contain"
-            />
+          <a href="/" aria-label="กลับหน้าหลัก" className="flex items-center">
+            <img src="/assets/paifa-engineering-logo.png" alt="Plaifa Engineering" className="h-14 w-auto object-contain" />
           </a>
-          <a
-            href="/"
-            className="inline-flex items-center gap-2 rounded-full border border-[#d4dce1] px-4 py-2.5 text-sm font-bold transition hover:border-[#f47a27] hover:text-[#f47a27]"
-          >
+          <a href="/" className="inline-flex items-center gap-2 rounded-full border border-[#d4dce1] px-4 py-2.5 text-sm font-bold text-[#10202d] transition hover:border-[#f47a27] hover:text-[#f47a27]">
             <ArrowLeft size={16} /> กลับหน้าหลัก
           </a>
         </div>
       </header>
 
       <main>
-        <section className="relative overflow-hidden bg-[#091824] py-20 text-white lg:py-28">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_25%,rgba(244,122,39,0.22),transparent_35%)]" />
+        <section className="relative overflow-hidden bg-[#091824] py-20 text-white sm:py-28">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_20%,rgba(244,122,39,0.22),transparent_35%)]" />
           <div className="container relative">
-            <div className="mb-6 flex items-center gap-3 text-[11px] font-bold tracking-[0.24em] text-[#ff9a55]">
-              <span className="h-px w-10 bg-[#f47a27]" />
-              PLAIFA ENGINEERING / PROJECTS
+            <div className="max-w-4xl">
+              <div className="mb-6 flex items-center gap-3 text-[11px] font-bold tracking-[0.24em] text-[#ff9a55]"><span className="h-px w-10 bg-[#f47a27]" />PLAIFA ENGINEERING • PROJECTS</div>
+              <h1 className="display text-4xl font-bold tracking-[-0.04em] sm:text-6xl">ผลงานที่ผ่านมา</h1>
+              <p className="mt-6 max-w-2xl text-base leading-8 text-slate-200/85 sm:text-lg">รวมตัวอย่างงานด้านระบบไฟฟ้า งานวิศวกรรม และงานบริการภาคสนามของ Plaifa Engineering โดยเน้นคุณภาพ ความปลอดภัย และความเรียบร้อยของงาน</p>
             </div>
-            <h1 className="display max-w-4xl text-5xl font-bold leading-[1] tracking-[-0.04em] sm:text-6xl lg:text-8xl">
-              ผลงานที่ผ่านมา
-              <br />
-              <span className="text-[#f47a27]">OUR PROJECTS</span>
-            </h1>
-            <p className="mt-7 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
-              ตัวอย่างงานระบบไฟฟ้าและงานสนับสนุนทางวิศวกรรมของ Plaifa Engineering
-              โดยเน้นคุณภาพ ความปลอดภัย และความเรียบร้อยของงานหน้างาน
-            </p>
           </div>
         </section>
 
-        <section className="container py-16 lg:py-24">
-          <div className="grid gap-7 md:grid-cols-2">
-            {projects.map((project, index) => (
-              <article
-                key={project.code}
-                className="group overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_18px_50px_rgba(15,31,45,0.07)]"
-              >
-                <div className="relative aspect-[16/10] overflow-hidden bg-[#10202d]">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="size-full object-cover transition duration-700 group-hover:scale-105"
-                  />
+        <section className="container py-16 sm:py-20">
+          <div className="mb-10 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+            <div><p className="text-xs font-bold tracking-[0.2em] text-[#f47a27]">OUR WORK</p><h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">งานด้านระบบไฟฟ้า</h2></div>
+            <p className="max-w-xl text-sm leading-7 text-slate-600">สามารถเพิ่มรูปโครงการจริง รายละเอียดขอบเขตงาน และข้อมูลโครงการแต่ละรายการได้ในหน้านี้ภายหลัง</p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2">
+            {projects.map((project) => { const Icon = project.icon; return (
+              <article key={project.code} className="group overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_16px_50px_rgba(15,31,45,0.07)]">
+                <div className="relative aspect-[16/9] overflow-hidden bg-slate-100">
+                  <img src={project.image} alt={project.title} className="size-full object-cover transition duration-500 group-hover:scale-[1.03]" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#091824]/75 via-transparent to-transparent" />
-                  <div className="absolute left-5 top-5 rounded-full bg-[#f47a27] px-3 py-1.5 text-[10px] font-black tracking-[0.16em] text-[#10202d]">
-                    {project.code}
-                  </div>
-                  <div className="absolute bottom-5 left-5 text-xs font-bold tracking-[0.16em] text-white/75">
-                    PROJECT {String(index + 1).padStart(2, "0")}
-                  </div>
+                  <div className="absolute bottom-5 left-5 flex items-center gap-2 rounded-full bg-[#091824]/85 px-3 py-2 text-[11px] font-bold tracking-[0.12em] text-white backdrop-blur-sm"><Icon size={15} className="text-[#f47a27]" />{project.code}</div>
                 </div>
-
-                <div className="p-7 sm:p-8">
-                  <div className="text-[10px] font-black tracking-[0.18em] text-[#f47a27]">
-                    {project.subtitle}
-                  </div>
-                  <h2 className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl">
-                    {project.title}
-                  </h2>
-                  <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">
-                    {project.description}
-                  </p>
-                  <div className="mt-6 flex items-center gap-2 text-xs font-bold text-[#10202d]">
-                    <CheckCircle2 size={17} className="text-[#f47a27]" />
-                    Engineering • Safety • Quality
-                  </div>
+                <div className="p-6 sm:p-7">
+                  <h3 className="text-xl font-bold sm:text-2xl">{project.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">{project.description}</p>
+                  <div className="mt-5 flex flex-wrap items-center gap-4 text-xs font-semibold text-slate-500"><span className="inline-flex items-center gap-2"><CheckCircle2 size={15} className="text-[#f47a27]" />งานเป็นระบบ</span><span className="inline-flex items-center gap-2"><ShieldCheck size={15} className="text-[#f47a27]" />เน้นความปลอดภัย</span></div>
                 </div>
               </article>
-            ))}
+            ); })}
           </div>
         </section>
 
-        <section className="container pb-20 lg:pb-28">
-          <div className="rounded-[32px] bg-[#10202d] px-7 py-10 text-white sm:px-10 lg:flex lg:items-center lg:justify-between lg:px-14 lg:py-12">
-            <div>
-              <div className="text-[10px] font-bold tracking-[0.2em] text-[#ff9a55]">
-                HAVE A PROJECT?
-              </div>
-              <h2 className="mt-2 text-2xl font-bold sm:text-3xl">
-                ให้เราเข้าไปประเมินงานของคุณ
-              </h2>
-              <p className="mt-3 max-w-xl text-sm leading-7 text-slate-300">
-                ส่งรายละเอียดงานเบื้องต้นให้ทีมงาน Plaifa Engineering
-                เพื่อประเมินขอบเขตและแนวทางดำเนินงาน
-              </p>
-            </div>
-            <a
-              href="/#contact"
-              className="mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-[#f47a27] px-6 py-3.5 text-sm font-bold text-[#10202d] transition hover:-translate-y-0.5 hover:bg-[#ff964e] lg:mt-0"
-            >
-              ขอใบเสนอราคา <ArrowUpRight size={17} />
-            </a>
-          </div>
+        <section className="container pb-20">
+          <div className="rounded-[30px] bg-[#10202d] p-8 text-white sm:p-12"><div className="flex flex-col justify-between gap-8 md:flex-row md:items-center"><div><p className="text-xs font-bold tracking-[0.2em] text-[#ff9a55]">LET'S WORK TOGETHER</p><h2 className="mt-3 text-2xl font-bold sm:text-3xl">มีโครงการระบบไฟฟ้าที่ต้องการให้เราดูแล?</h2><p className="mt-3 max-w-2xl text-sm leading-7 text-slate-300">ส่งรายละเอียดงานให้ทีม Plaifa Engineering ประเมินขอบเขตและแนวทางดำเนินงาน</p></div><a href="/#contact" className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-[#f47a27] px-6 py-4 text-sm font-bold text-[#10202d] transition hover:-translate-y-0.5 hover:bg-[#ff964e]">ขอใบเสนอราคา <ArrowUpRight size={17} /></a></div></div>
         </section>
       </main>
-
-      <footer className="border-t border-slate-200 bg-white py-7">
-        <div className="container flex flex-col gap-2 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
-          <span>© Plaifa Engineering Co.,Ltd.</span>
-          <span>Electrical • Engineering • Project</span>
-        </div>
-      </footer>
     </div>
   );
 }
